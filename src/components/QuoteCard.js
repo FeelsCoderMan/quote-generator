@@ -35,7 +35,6 @@ function QuoteCard(props) {
         <div className="quote-container">
             <Quote quote={quote}></Quote>
             <div className="button-container">
-                <Button value=""></Button>
                 <Button value="Next Quote" generateQuoteHandler={generateQuoteHandler}></Button>
             </div>
         </div>
