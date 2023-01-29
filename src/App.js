@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import QuoteCard from '../src/components/QuoteCard';
+import Loader from '../src/components/Loader'
 
 function App() {
+  const [savedQuote, setSavedQuote] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+
+  function setLoadingHandler(boolean, quote) {
+    setIsLoading(boolean);
+    
+    if (quote) {
+      setSavedQuote(quote);
+    }
+  } 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        {!isLoading ? <QuoteCard setLoading={setLoadingHandler} savedQuote={savedQuote}></QuoteCard> : <Loader isLoading={isLoading} ></Loader>}
     </div>
   );
 }
