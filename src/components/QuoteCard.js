@@ -25,6 +25,7 @@ function QuoteCard(props) {
             setQuote(nextQuoteObj)
             props.setLoading(false, nextQuoteObj)
         } catch (e) {
+            // TODO: Show pop-up
             console.log("Unexpected error occurred: " + e.message);
         }
 
