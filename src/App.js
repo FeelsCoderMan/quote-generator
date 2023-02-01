@@ -7,6 +7,7 @@ function App() {
   // TODO: Use parcel
   // TODO: Use Redux
   // TODO: Change favicon
+  // TODO: Add ten quote to the cache and use them in offline mode
   const [savedQuote, setSavedQuote] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
