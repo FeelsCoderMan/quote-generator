@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { quoteBaseUrl } from '../constants';
 import Quote from './Quote';
 import Button from './Button';
 import './QuoteCard.css'
@@ -12,10 +13,9 @@ function QuoteCard(props) {
     
     async function generateQuoteHandler() {
         props.setLoading(true);
-        const baseUrl = "https://api.quotable.io/";
 
         try {
-            var response = await fetch(baseUrl + "random");
+            var response = await fetch(quoteBaseUrl + "random");
             var nextQuote = await response.json();
             var nextQuoteObj = {
                 text: nextQuote.content,
